@@ -12,7 +12,6 @@ pipeline {
     }
 
         stage('docker build') {
-            steps{
                 app = docker.build("vaibhav/test")
             }
         }
