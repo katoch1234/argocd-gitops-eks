@@ -9,9 +9,9 @@ pipeline {
                 git branch: 'main', credentialsId: 'github', url:'https://github.com/katoch1234/argocd-gitops-eks.git'
             }
         }
-    }
 
         stage('docker build') {
                 app = docker.build("vaibhav/test")
             }
         }
+}
