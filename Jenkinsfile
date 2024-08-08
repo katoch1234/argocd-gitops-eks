@@ -11,7 +11,9 @@ pipeline {
         }
 
         stage('docker build') {
-                app = docker.build("vaibhav/test")
+                steps{
+                    sh "docker build -t myapp:{$BUILD_NUMBER}"
+                }
             }
         }
 }
