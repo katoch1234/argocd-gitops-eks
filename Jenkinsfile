@@ -3,6 +3,10 @@ pipeline {
         label 'jenkins-agent'
     }
 
+    environment{
+        IMAGE_NAME = "myapp"
+    }
+
     stages{
         stage('git checkout') {
             steps{
@@ -12,7 +16,7 @@ pipeline {
 
         stage('docker build') {
                 steps{
-                    sh "docker build -t myapp:{$BUILD_NUMBER} ."
+                    sh "docker build -t myapp:${BUILD_NUMBER} ."
                 }
             }
         }
