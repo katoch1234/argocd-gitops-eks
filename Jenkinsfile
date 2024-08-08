@@ -15,9 +15,8 @@ pipeline {
         }
 
         stage('docker build') {
-                steps{
-                    sh "docker build -t myapp:${BUILD_NUMBER} ."
+               app = docker.build("raj80dockerid/test")
                 }
-            }
+            
         }
 }
