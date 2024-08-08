@@ -15,8 +15,11 @@ pipeline {
         }
 
         stage('docker build') {
-               app = docker.build("raj80dockerid/test")
+            steps{
+                script{
+                     app = docker.build("vaibhav/test:${BUILD_NUMBER}")
                 }
-            
+        }
+        }
         }
 }
