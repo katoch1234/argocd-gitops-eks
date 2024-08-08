@@ -15,4 +15,3 @@ pipeline {
                 app = docker.build("vaibhav/test")
             }
         }
-}
