@@ -23,7 +23,7 @@ pipeline {
         stage('docker build') {
             steps{
                 script{
-                     app = docker.build("vaibhav/test-app:${BUILD_NUMBER}")
+                     app = docker.build("${IMAGE_NAME}")
                 }
         }
         }
